@@ -1,8 +1,35 @@
 package com.aina;
+import javax.swing.*;
+import java.awt.*;
 
 public class Main {
 
     public static void main(String[] args) {
-	// write your code here
+	// a+b
+
+    JFrame window = new JFrame("a+b");
+    window.setBounds(5,5,500,400);
+    window.setLayout(null);
+
+    // поля для ввода
+        JTextField a_Fild = new JTextField();
+        JTextField b_Fild = new JTextField();
+        a_Fild.setBounds(175,45,150,50);
+        b_Fild.setBounds(175,105,150,50);
+        window.add(a_Fild);
+        window.add(b_Fild);
+    //кнопка
+    JButton button = new JButton("сумма");
+    button.setBounds(175,165,150,50);
+    button.setBackground (Color.getHSBColor(100,-80,100));
+        // 0xff007C21 RGB #DEB887.
+    button.setForeground (Color.WHITE);
+    window.add(button);
+        // надпись
+        JLabel label = new JLabel("тут будет сумма");
+        label.setBounds(205,225,150,50);
+        window.add(label);
+
+window.setVisible(true);
     }
 }
