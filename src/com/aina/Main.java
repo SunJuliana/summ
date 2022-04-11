@@ -1,6 +1,8 @@
 package com.aina;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class Main {
 
@@ -22,13 +24,40 @@ public class Main {
     JButton button = new JButton("сумма");
     button.setBounds(175,165,150,50);
     button.setBackground (Color.getHSBColor(100,-80,100));
-        // 0xff007C21 RGB #DEB887.
     button.setForeground (Color.WHITE);
     window.add(button);
         // надпись
         JLabel label = new JLabel("тут будет сумма");
         label.setBounds(205,225,150,50);
         window.add(label);
+        // обработчик нажатия на кнопку
+        ActionListener actionListener = new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                int a=0,b=0;
+                boolean a_ok=false, b_ok=false;
+                try {
+                    a = Integer.parseInt(a_Fild.getText());
+                    a_ok = true;
+                }
+                catch (Exception err){
+                    JOptionPane.showMessageDialog(null, "В поле А введено некорректное значение");
+                }
+                try {
+                    b = Integer.parseInt(a_Fild.getText());
+                    b_ok = true;
+                }
+                 catch (Exception err){
+                    JOptionPane.showMessageDialog(null, "В поле B введено некорректное значение");
+                }
+
+                if (a_ok & b_ok) label.setText (a+b+"");
+                else label.setText("сложение не удалось");
+
+
+            }
+        };
+        button.addActionListener(actionListener);
 
 window.setVisible(true);
     }
