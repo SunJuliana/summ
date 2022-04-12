@@ -23,7 +23,8 @@ public class Main {
     //кнопка
     JButton button = new JButton("сумма");
     button.setBounds(175,165,150,50);
-    button.setBackground (Color.getHSBColor(100,-80,100));
+    Color backgroundColor = new Color(23, 90, 10);
+    button.setBackground (backgroundColor);
     button.setForeground (Color.WHITE);
     window.add(button);
         // надпись
@@ -44,7 +45,7 @@ public class Main {
                     JOptionPane.showMessageDialog(null, "В поле А введено некорректное значение");
                 }
                 try {
-                    b = Integer.parseInt(a_Fild.getText());
+                    b = Integer.parseInt(b_Fild.getText());
                     b_ok = true;
                 }
                  catch (Exception err){
