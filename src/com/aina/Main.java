@@ -31,7 +31,7 @@ public class Main {
         JLabel label = new JLabel("тут будет сумма");
         label.setBounds(205,225,150,50);
         window.add(label);
-        // обработчик нажатия на кнопку потому что так
+        // обработчик нажатия на кнопку
         ActionListener actionListener = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
